@@ -1,4 +1,30 @@
+Resultado da matriz A entrada1.in:
+1.00 1.00 
+1.00 1.00 
+
+Resultado da matriz B entrada1.in:
+1.00 1.00 
+1.00 1.00 
+
+Resultado da matriz C entrada1.in:
+2.00 2.00 
+2.00 2.00 
+
+ 4  4 
 Resultado do arquivo entrada1.in:
-Valor E: 193.000000
+Valor E: 8.000000
+Resultado da matriz A entrada2.in:
+2.00 2.00 
+2.00 2.00 
+
+Resultado da matriz B entrada2.in:
+2.00 2.00 
+2.00 2.00 
+
+Resultado da matriz C entrada2.in:
+8.00 8.00 
+8.00 8.00 
+
+16 16 
 Resultado do arquivo entrada2.in:
 Valor E: 32.000000

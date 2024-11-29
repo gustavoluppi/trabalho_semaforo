@@ -158,7 +158,7 @@ void *ConsumerProducer1(void *arg)
             }
         }
 
-        printf("[CP1] Processado arquivo %s. Matriz C calculada.\n", data->name);
+        printf("[CP1] Processado arquivo %s. Matriz C calculada: %f.\n", data->name, data->C[0][0]);
 
         // Inserir o item processado no buffer compartilhado shared[1]
         sem_wait(&shared[1].empty);
@@ -296,6 +296,43 @@ void *Consumer(void *arg)
         }
 
         // Escrever o resultado no arquivo de saída
+        fprintf(output, "Resultado da matriz A %s:\n", data->name);
+        for (int i = 0; i < MATRIX_SIZE; i++)
+        {
+            for (int j = 0; j < MATRIX_SIZE; j++)
+            {
+                fprintf(output, "%.2f ", data->A[i][j]); // Escreve um número float com 2 casas decimais
+            }
+            fprintf(output, "\n"); // Nova linha após cada linha da matriz
+        }
+        fprintf(output, "\n");
+        fprintf(output, "Resultado da matriz B %s:\n", data->name);
+        for (int i = 0; i < MATRIX_SIZE; i++)
+        {
+            for (int j = 0; j < MATRIX_SIZE; j++)
+            {
+                fprintf(output, "%.2f ", data->B[i][j]); // Escreve um número float com 2 casas decimais
+            }
+            fprintf(output, "\n"); // Nova linha após cada linha da matriz
+        }
+        fprintf(output, "\n");
+        fprintf(output, "Resultado da matriz C %s:\n", data->name);
+        for (int i = 0; i < MATRIX_SIZE; i++)
+        {
+            for (int j = 0; j < MATRIX_SIZE; j++)
+            {
+                fprintf(output, "%.2f ", data->C[i][j]); // Escreve um número float com 2 casas decimais
+            }
+            fprintf(output, "\n"); // Nova linha após cada linha da matriz
+        }
+        fprintf(output, "\n");
+        int num_elementos = sizeof(data->V) / sizeof(data->V[0]);
+        for (int i = 0; i < num_elementos; i++)
+        {
+            fprintf(output, "%2.f ", data->V[i]);
+        }
+        fprintf(output, "\n");
+
         fprintf(output, "Resultado do arquivo %s:\n", data->name);
         fprintf(output, "Valor E: %f\n", data->E);
 
