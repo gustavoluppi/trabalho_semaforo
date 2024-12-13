@@ -10,8 +10,8 @@
 #define NCP2 4 // CP2
 #define NCP3 3 // CP3
 #define NC 1   // Consumidor
-#define FILE_COUNT 2
-#define MATRIX_SIZE 2
+#define FILE_COUNT 50
+#define MATRIX_SIZE 10
 
 // Estrutura S
 typedef struct
@@ -327,14 +327,17 @@ void *Consumer(void *arg)
         }
         fprintf(output, "\n");
         int num_elementos = sizeof(data->V) / sizeof(data->V[0]);
+        fprintf(output, "Resultado por coluna: \n");
         for (int i = 0; i < num_elementos; i++)
         {
-            fprintf(output, "%2.f ", data->V[i]);
+            fprintf(output, "%.2f ", data->V[i]);
         }
         fprintf(output, "\n");
 
         fprintf(output, "Resultado do arquivo %s:\n", data->name);
+
         fprintf(output, "Valor E: %f\n", data->E);
+        fprintf(output, "\n");
 
         free(data);
         processed_count++;

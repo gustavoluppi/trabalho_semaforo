@@ -28,7 +28,7 @@ void save_file(const char *filename, double A[MATRIX_SIZE][MATRIX_SIZE], double 
     }
 
     // Escrever a matriz A
-    fprintf(file, "A:\n");
+
     for (int i = 0; i < MATRIX_SIZE; i++)
     {
         for (int j = 0; j < MATRIX_SIZE; j++)
@@ -39,7 +39,7 @@ void save_file(const char *filename, double A[MATRIX_SIZE][MATRIX_SIZE], double 
     }
 
     // Escrever a matriz B
-    fprintf(file, "B:\n");
+    fprintf(file, "\n");
     for (int i = 0; i < MATRIX_SIZE; i++)
     {
         for (int j = 0; j < MATRIX_SIZE; j++)
